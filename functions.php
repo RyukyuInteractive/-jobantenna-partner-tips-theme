@@ -31,3 +31,10 @@ add_action('admin_menu', function () {
 
 // TailwindCSS
 wp_enqueue_script('tailwind', 'https://cdn.tailwindcss.com', [], '', false);
+
+// attachmentがinheritなため
+add_action('pre_get_posts', function ($wp_query) {
+    if (!is_admin() && $wp_query->is_main_query() && !is_singular() && $wp_query->get('attachment_category')) {
+        $wp_query->set('post_status', 'inherit');
+    }
+});
