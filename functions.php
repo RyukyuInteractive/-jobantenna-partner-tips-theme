@@ -24,5 +24,7 @@ add_action('wp_head', 'fit_head_child');
 //下記ユーザーカスタマイズエリア
 //////////////////////////////////////////////////
 
-
-?>
+// 再利用ブロックへの遷移を管理画面メニューからできるようにする
+add_action('admin_menu', function () {
+    add_menu_page('再利用ブロック', '再利用ブロック', 'manage_options', 'edit.php?post_type=wp_block', '', 'dashicons-screenoptions', 26);
+});
