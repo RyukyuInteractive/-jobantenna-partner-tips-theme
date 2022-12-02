@@ -38,3 +38,14 @@ add_action('pre_get_posts', function ($wp_query) {
         $wp_query->set('post_status', 'inherit');
     }
 });
+
+// admin barに資料DownloadPage linkを追加
+add_action('admin_bar_menu', function (WP_Admin_Bar $admin_bar) {
+    $admin_bar->add_menu([
+        'id'    => 'document-download-page',
+        'parent' => null,
+        'group'  => null,
+        'title' => '資料DonwloadPage',
+        'href'  => '/partner-tips/attachment_category/document/',
+    ]);
+}, 99);
