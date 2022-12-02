@@ -18,3 +18,14 @@ License URI:  http://www.gnu.org/licenses/gpl.html
 //下記ユーザーカスタマイズエリア
 /////////////////////////////////////////////////*/
 
+header.l-header .menuNavi {
+    display: none;
+}
+
+.siteTitle {
+    margin-bottom: 20px;
+}
+
+#extra__search, #extra__menu {
+    display: none;
+}
