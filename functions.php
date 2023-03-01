@@ -29,11 +29,11 @@ add_action('admin_menu', function () {
     add_menu_page('再利用ブロック', '再利用ブロック', 'manage_options', 'edit.php?post_type=wp_block', '', 'dashicons-screenoptions', 26);
 });
 
-add_action('wp_enqueue_scripts', function(){
+add_action('wp_enqueue_scripts', function () {
     // TailwindCSS
-    if (!is_addmin()) {
-        wp_enqueue_script('tailwind', 'https://cdn.tailwindcss.com', [], '', false);
-	}
+    if (!is_admin()) {
+        wp_enqueue_script('tailwind', 'https://cdn.tailwindcss.com', [], '', false);
+    }
 });
 
 // attachmentがinheritなため
